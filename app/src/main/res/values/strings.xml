@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FirstDaySummerPructise</string>
+    <string name="first_name">Name</string>
+    <string name="second_name">Surname</string>
 </resources>
