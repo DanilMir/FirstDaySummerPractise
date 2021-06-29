@@ -2,4 +2,6 @@
     <string name="app_name">FirstDaySummerPructise</string>
     <string name="first_name">Name</string>
     <string name="second_name">Surname</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="send_message">Message</string>
 </resources>
