@@ -6,4 +6,8 @@
     <string name="send_message">Message</string>
     <string name="note_head">Your note</string>
     <string name="note_hint">A note about this user. It will be visible only to you. Click to enter the text</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="empty_field">Empty</string>
 </resources>
