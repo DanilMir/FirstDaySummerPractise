@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 
@@ -50,16 +51,17 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
             var message = when{
                 passFromBase == null -> "User not found"
                 password == passFromBase -> {
-                    /*val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("EXTRA_EMAIL", email)
-                    intent.putExtra("EXTRA_PASS", password)
-                    startActivity(intent)
-                    */"Nice"
+                    findNavController().navigate(R.id.action_loginFragment_to_mainFragment, MainFragment.createBundle(email, password))
+                    "Nice"
                 }
                 else -> "Correct password: $passFromBase"
             }
             etEmail?.hideKeyboard(requireContext())
             showMessage(message)
+        }
+
+        btnSettings?.setOnClickListener{
+            findNavController().navigate(R.id.action_loginFragment_to_settingsFragment)
         }
 
         etEmail?.addTextChangedListener {

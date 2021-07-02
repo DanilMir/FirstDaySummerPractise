@@ -18,6 +18,27 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
             tvEmail = view.findViewById(R.id.tv_email)
             tvPass = view.findViewById(R.id.tv_password)
+
+            val email: String? = arguments?.getString(ARG_EMAIL)
+            val pass: String? = arguments?.getString(ARG_PASS)
+
+            if (email != null) {
+                tvEmail?.text = "Email: $email"
+            }
+            if (pass != null) {
+                tvPass?.text = "Password: $pass"
+            }
         }
+
+    companion object {
+
+        private const val ARG_EMAIL = "ARG_EMAIL"
+        private const val ARG_PASS = "ARG_PASS"
+
+        fun createBundle(email: String, pass: String): Bundle = Bundle().apply {
+            putString(ARG_EMAIL, email)
+            putString(ARG_PASS, pass)
+        }
+    }
 
 }
